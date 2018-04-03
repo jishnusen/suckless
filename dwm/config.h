@@ -59,7 +59,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_bg, "-sf", sel_fg, NULL };
-static const char *termcmd[]  = { "st", "-e", "tmux", "attach", NULL };
+static const char *termcmd[]  = { "st", NULL };
+static const char *bupcmd[] = { "xbacklight", "-inc", "5", NULL};
+static const char *bdowncmd[] = { "xbacklight", "-dec", "5", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -96,6 +98,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+  { 0,                            0x1008ff02, spawn,           {.v = bupcmd } },
+  { 0,                            0x1008ff03, spawn,           {.v = bdowncmd } },
 };
 
 /* button definitions */

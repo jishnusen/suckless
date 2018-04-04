@@ -1,9 +1,0 @@
-__pycache__/
-config.*
-*.o
-*.orig
-*.rej
-dwm
-.ycm_extra_conf.py
-src/
-pkg/

@@ -5,7 +5,13 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Nerd Font Mono:size=11:antialias=true:autohint=true";
+/* static char *font = "Iosevka Nerd Font Mono:size=11:antialias=true:autohint=true"; */
+static char *font = "-t-cherry-Medium-R-Normal--10-100-75-75-C-100-ISO8859-1";
+/* disable bold, italic and roman fonts globally */
+int disablebold = 1;
+int disableitalic = 1;
+int disableroman = 1;
+
 static int borderpx = 2;
 
 /*
@@ -24,7 +30,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
+static float cwscale = 0.9;
 static float chscale = 1.0;
 
 /*

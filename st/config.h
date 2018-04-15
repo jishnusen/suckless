@@ -88,39 +88,39 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-static const char *colorname[] = {
+const char *colorname[] = {
 
   /* 8 normal colors */
-  [0] = "#263238", /* black   */
-  [1] = "#cc6666", /* red     */
-  [2] = "#f0c674", /* green   */
-  [3] = "#b5bd68", /* yellow  */
-  [4] = "#8abeb7", /* blue    */
-  [5] = "#81a2be", /* magenta */
-  [6] = "#b294bb", /* cyan    */
-  [7] = "#ffffff", /* white   */
+  [0] = "#1f2320", /* black   */
+  [1] = "#bc985a", /* red     */
+  [2] = "#a5c6af", /* green   */
+  [3] = "#6cc1b4", /* yellow  */
+  [4] = "#48a1a8", /* blue    */
+  [5] = "#96919f", /* magenta */
+  [6] = "#b34c64", /* cyan    */
+  [7] = "#c7c8c7", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#707880",  /* black   */
-  [9]  = "#cc6666",  /* red     */
-  [10] = "#f0c674", /* green   */
-  [11] = "#b5bd68", /* yellow  */
-  [12] = "#8abeb7", /* blue    */
-  [13] = "#81a2be", /* magenta */
-  [14] = "#b294bb", /* cyan    */
-  [15] = "#ffffff", /* white   */
+  [8]  = "#575a57",  /* black   */
+  [9]  = "#bc985a",  /* red     */
+  [10] = "#a5c6af", /* green   */
+  [11] = "#6cc1b4", /* yellow  */
+  [12] = "#48a1a8", /* blue    */
+  [13] = "#96919f", /* magenta */
+  [14] = "#b34c64", /* cyan    */
+  [15] = "#c7c8c7", /* white   */
 
   /* special colors */
-  [256] = "#263238", /* background */
-  [257] = "#ffffff", /* foreground */
-  [258] = "#cc6666",     /* cursor */
+  [256] = "#1f2320", /* background */
+  [257] = "#c7c8c7", /* foreground */
+  [258] = "#bc985a",     /* cursor */
 };
 
 /* Default colors (colorname index)
  * foreground, background, cursor */
 unsigned int defaultbg = 0;
 unsigned int defaultfg = 257;
-static unsigned int defaultcs = 258;
+static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 257;
 
 /*
@@ -130,7 +130,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers

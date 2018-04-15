@@ -6,8 +6,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 6;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Nerd Font Mono:size=11" };
-static const char dmenufont[]       = "Iosevka Nerd Font Mono:size=11";
+static const char *fonts[]          = { "t cherry:pixelsize=11" };
+static const char dmenufont[]       = "t cherry:pixelsize=11";
 static const char norm_fg[] = "#ffffff";
 static const char norm_bg[] = "#263238";
 static const char norm_border[] = "#707880";

@@ -8,17 +8,14 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "t cherry:pixelsize=11" };
 static const char dmenufont[]       = "t cherry:pixelsize=11";
-static const char norm_fg[] = "#ffffff";
-static const char norm_bg[] = "#263238";
-static const char norm_border[] = "#707880";
 
-static const char sel_fg[] = "#263238";
-static const char sel_bg[] = "#6cc1b4";
-static const char sel_border[] = "#ffffff";
+static const char col_base00[]      = "#282936";
+static const char col_base01[]      = "#3a3c4e";
+static const char col_base05[]      = "#e9e9f4";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { norm_fg, norm_bg, norm_border },
-	[SchemeSel]  = { sel_fg, sel_bg,  sel_border },
+	/*               fg         bg          border   */
+	[SchemeNorm] = { col_base05, col_base00, col_base01 },
+	[SchemeSel]  = { col_base05, col_base01, col_base01 },
 };
 
 /* tagging */
@@ -59,7 +56,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_bg, "-sf", sel_fg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_base00, "-nf", col_base05, "-sb", col_base01, "-sf", col_base05, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *bupcmd[] = { "xbacklight", "-inc", "5", NULL};
 static const char *bdowncmd[] = { "xbacklight", "-dec", "5", NULL};

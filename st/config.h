@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 /* static char *font = "Iosevka Nerd Font Mono:size=11:antialias=true:autohint=true"; */
-static char *font = "-t-cherry-Medium-R-Normal--10-100-75-75-C-100-ISO8859-1";
+static char *font = "-t-cherry-Medium-R-Normal--13-100-75-75-C-100-ISO8859-1";
 /* disable bold, italic and roman fonts globally */
 int disablebold = 1;
 int disableitalic = 1;
@@ -88,40 +88,36 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-const char *colorname[] = {
+/* gruvbox-dark colorscheme */
 
-  /* 8 normal colors */
-  [0] = "#1f2320", /* black   */
-  [1] = "#bc985a", /* red     */
-  [2] = "#a5c6af", /* green   */
-  [3] = "#6cc1b4", /* yellow  */
-  [4] = "#48a1a8", /* blue    */
-  [5] = "#96919f", /* magenta */
-  [6] = "#b34c64", /* cyan    */
-  [7] = "#c7c8c7", /* white   */
-
-  /* 8 bright colors */
-  [8]  = "#575a57",  /* black   */
-  [9]  = "#bc985a",  /* red     */
-  [10] = "#a5c6af", /* green   */
-  [11] = "#6cc1b4", /* yellow  */
-  [12] = "#48a1a8", /* blue    */
-  [13] = "#96919f", /* magenta */
-  [14] = "#b34c64", /* cyan    */
-  [15] = "#c7c8c7", /* white   */
-
-  /* special colors */
-  [256] = "#1f2320", /* background */
-  [257] = "#c7c8c7", /* foreground */
-  [258] = "#bc985a",     /* cursor */
+/* Terminal colors (16 first used in escape sequence) */
+static const char *colorname[] = {
+	"#1d2021",
+  "#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#a89984",
+	"#928374",
+	"#fb4934",
+	"#b8bb26",
+	"#fabd2f",
+	"#83a598",
+	"#d3869b",
+	"#8ec07c",
+	"#ebdbb2",
 };
 
-/* Default colors (colorname index)
- * foreground, background, cursor */
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor
+ */
+unsigned int defaultfg = 15;
 unsigned int defaultbg = 0;
-unsigned int defaultfg = 257;
-static unsigned int defaultcs = 257;
-static unsigned int defaultrcs = 257;
+unsigned int defaultcs = 15;
+unsigned int defaultrcs = 15;
 
 /*
  * Default shape of cursor
@@ -225,6 +221,12 @@ static uint ignoremod = Mod2Mask|XK_SWITCH_MOD;
  * modifier, set to 0 to not use it.
  */
 static uint forceselmod = ShiftMask;
+
+MouseKey mkeys[] = {
+	/* button               mask            function        argument */
+	{ Button4,              XK_NO_MOD,      kscrollup,      {.i =  1} },
+	{ Button5,              XK_NO_MOD,      kscrolldown,    {.i =  1} },
+};
 
 /*
  * This is the huge key array which defines all compatibility to the Linux

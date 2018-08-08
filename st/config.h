@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 /* static char *font = "Iosevka Nerd Font Mono:size=11:antialias=true:autohint=true"; */
-static char *font = "-t-cherry-Medium-R-Normal--13-100-75-75-C-100-ISO8859-1";
+static char *font = "Terminus:size=12";
 /* disable bold, italic and roman fonts globally */
 int disablebold = 1;
 int disableitalic = 1;

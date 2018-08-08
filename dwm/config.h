@@ -6,8 +6,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 6;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "t cherry:pixelsize=11" };
-static const char dmenufont[]       = "t cherry:pixelsize=11";
+static const char *fonts[]          = { "Terminus:size=12" };
+static const char dmenufont[]       = "Terminus:size=12";
 
 static const char col_base00[]      = "#282936";
 static const char col_base01[]      = "#3a3c4e";
@@ -60,6 +60,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *bupcmd[] = { "xbacklight", "-inc", "5", NULL};
 static const char *bdowncmd[] = { "xbacklight", "-dec", "5", NULL};
+static const char *vupcmd[] = {"pactl", "set-sink-volume", "0", "+5%", NULL};
+static const char *vdowncmd[] = {"pactl", "set-sink-volume", "0", "-5%", NULL};
+static const char *vmutecmd[] = {"pactl", "set-sink-mute", "0", "toggle", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -98,6 +101,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
   { 0,                            0x1008ff02, spawn,           {.v = bupcmd } },
   { 0,                            0x1008ff03, spawn,           {.v = bdowncmd } },
+  { 0,                            0x1008ff13, spawn,           {.v = vupcmd } },
+  { 0,                            0x1008ff12, spawn,           {.v = vmutecmd } },
+  { 0,                            0x1008ff11, spawn,           {.v = vdowncmd } },
 };
 
 /* button definitions */

@@ -9,6 +9,11 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Terminus:size=12" };
 static const char dmenufont[]       = "Terminus:size=12";
 
+static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
+static const int showsystray        = 1;     /* 0 means no systray */
+
 static const char col_base00[]      = "#282936";
 static const char col_base01[]      = "#3a3c4e";
 static const char col_base05[]      = "#e9e9f4";
@@ -28,7 +33,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Spotify",  NULL,       NULL,       1 << 4,       0,           0  },
+	{ "spotify",  NULL,       NULL,       1 << 4,       0,           0  },
 };
 
 /* layout(s) */
@@ -63,6 +69,11 @@ static const char *bdowncmd[] = { "xbacklight", "-dec", "5", NULL};
 static const char *vupcmd[] = {"pactl", "set-sink-volume", "0", "+5%", NULL};
 static const char *vdowncmd[] = {"pactl", "set-sink-volume", "0", "-5%", NULL};
 static const char *vmutecmd[] = {"pactl", "set-sink-mute", "0", "toggle", NULL};
+static const char *splaypausecmd[] = {"music.sh", "p", NULL};
+static const char *snextcmd[] = {"music.sh", "n", NULL};
+static const char *sprevcmd[] = {"music.sh", "r", NULL};
+static const char *spausecmd[] = {"music.sh", "s", NULL};
+static const char *touchpad[] = {"toggletouchpad.sh", NULL};
 
 #include "movestack.c"
 static Key keys[] = {
@@ -107,6 +118,11 @@ static Key keys[] = {
   { 0,                            0x1008ff13, spawn,           {.v = vupcmd } },
   { 0,                            0x1008ff12, spawn,           {.v = vmutecmd } },
   { 0,                            0x1008ff11, spawn,           {.v = vdowncmd } },
+  { 0,                            0x1008ff14, spawn,           {.v = splaypausecmd } },
+  { 0,                            0x1008ff17, spawn,           {.v = snextcmd } },
+  { 0,                            0x1008ff16, spawn,           {.v = sprevcmd } },
+  { 0,                            0x1008ff15, spawn,           {.v = spausecmd } },
+  { 0,                            0x1008ffa9, spawn,           {.v = touchpad } },
 };
 
 /* button definitions */

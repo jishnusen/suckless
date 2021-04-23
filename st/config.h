@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Term:size=11";
+static char *font = "Iosevka:size=11";
 static int borderpx = 2;
 
 /*
@@ -112,22 +112,25 @@ float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#1d2021",
-  "#cc241d",
-	"#98971a",
-	"#d79921",
-	"#458588",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#83a598",
-	"#d3869b",
-	"#8ec07c",
-	"#ebdbb2",
+  /* 8 normal colors */
+  [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+  [1] = "#ea6962", /* red     */
+  [2] = "#a9b665", /* green   */
+  [3] = "#d8a657", /* yellow  */
+  [4] = "#7daea3", /* blue    */
+  [5] = "#d3869b", /* magenta */
+  [6] = "#89b482", /* cyan    */
+  [7] = "#d4be98", /* white   */
+
+  /* 8 bright colors */
+  [8]  = "#928374", /* black   */
+  [9]  = "#ef938e", /* red     */
+  [10] = "#bbc585", /* green   */
+  [11] = "#e1bb7e", /* yellow  */
+  [12] = "#9dc2ba", /* blue    */
+  [13] = "#e1acbb", /* magenta */
+  [14] = "#a7c7a2", /* cyan    */
+  [15] = "#e2d3ba", /* white   */
 };
 
 /*
@@ -137,7 +140,7 @@ static const char *colorname[] = {
 unsigned int defaultfg = 15;
 unsigned int defaultbg = 0;
 unsigned int defaultcs = 15;
-unsigned int defaultrcs = 15;
+unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor

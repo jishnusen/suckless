@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka:size=11";
+static char *font = "Iosevka Term:size=11";
 static int borderpx = 2;
 
 /*

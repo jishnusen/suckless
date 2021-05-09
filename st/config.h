@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Term:size=11";
+static char *font = "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -116,21 +116,21 @@ static const char *colorname[] = {
   [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
   [1] = "#ea6962", /* red     */
   [2] = "#a9b665", /* green   */
-  [3] = "#d8a657", /* yellow  */
+  [3] = "#e78a4e", /* yellow  */
   [4] = "#7daea3", /* blue    */
   [5] = "#d3869b", /* magenta */
   [6] = "#89b482", /* cyan    */
   [7] = "#d4be98", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#928374", /* black   */
-  [9]  = "#ef938e", /* red     */
-  [10] = "#bbc585", /* green   */
-  [11] = "#e1bb7e", /* yellow  */
-  [12] = "#9dc2ba", /* blue    */
-  [13] = "#e1acbb", /* magenta */
-  [14] = "#a7c7a2", /* cyan    */
-  [15] = "#e2d3ba", /* white   */
+  [8] = "#928374", /* black */
+  [9] = "#ea6962", /* red     */
+  [10] = "#a9b665", /* green   */
+  [11] = "#d8a657", /* yellow  */
+  [12] = "#7daea3", /* blue    */
+  [13] = "#d3869b", /* magenta */
+  [14] = "#89b482", /* cyan    */
+  [15] = "#d4be98", /* white   */
 };
 
 /*
